@@ -1,0 +1,17 @@
+#simple_version
+
+  
+import random
+
+list = ""
+for letter in range(nr_letters):
+    list += random.choice(letters)
+
+for symbol in range(nr_symbols):
+    list += random.choice(symbols)
+
+for number in range(nr_numbers):
+    list += random.choice(numbers)
+
+print("this is your passwword")
+print(list)
