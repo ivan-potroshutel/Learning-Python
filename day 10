@@ -1,0 +1,41 @@
+import art
+print(art.logo)
+
+def add(n1, n2):
+    return n1 + n2
+
+def subtract(n1, n2):
+    return n1 - n2
+
+def multiply(n1, n2):
+    return n1 * n2
+
+def divide(n1, n2):
+    return n1 / n2
+
+keys = {
+    "+": add,
+    "-": subtract,
+    "*": multiply,
+    "/": divide
+}
+should_accumulate = True
+def calculator():
+    should_accumulate = True
+    first_number = int(input("What is the first number?: "))
+
+
+    while should_accumulate:
+        for bib in keys:
+            print(bib)
+        choosen_operator = input("Choose an operator: ")
+        second_number = int(input("What is the second number?: "))
+        answer = keys[choosen_operator](first_number, second_number)
+        print(f"{first_number} {choosen_operator} {second_number} = {answer}")
+        next_choice = input("Would you like to continue? (y/n): ").lower()
+        if next_choice == "y":
+            print(answer)
+        else:
+            should_accumulate = False
+            print("\n" * 20)
+            calculator()
